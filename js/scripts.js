@@ -50,8 +50,27 @@ Pizza.prototype.calculateCost = function () {
 
 }
 
-const myPizza = new Pizza(["salami", "mushroom"], "small");
+// const myPizza = new Pizza(["salami", "mushroom"], "small");
 
-myPizza.calculateCost();
+// myPizza.calculateCost();
 
-console.log(myPizza);
+// console.log(myPizza);
+
+//UI Logic
+
+
+function formHandler(event) {
+    event.preventDefault();
+
+    const size = document.getElementById('select-size')
+    const test = size.options[size.selectedIndex];
+
+    console.log(size)
+    // console.log(test)
+};
+
+window.addEventListener('load', function () {
+    const form = document.getElementById('form');
+
+    form.addEventListener('submit', formHandler);
+});
