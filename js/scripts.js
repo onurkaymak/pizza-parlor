@@ -53,6 +53,22 @@ Pizza.prototype.calculateCost = function () {
 
 //UI Logic
 
+function formCleaner() {
+    let sizeInput = document.getElementById('select-size').selectedIndex;
+    const selectInputErr = document.getElementById('form-select-p');
+    const checkboxes = document.getElementsByName('topping');
+
+    selectInputErr.setAttribute("class", "hidden");
+
+    console.log(sizeInput)
+
+    checkboxes.forEach(function (checkbox) {
+        checkbox.checked = false;
+    });
+
+    sizeInput = 0;
+}
+
 function formHandler(event) {
     event.preventDefault();
 
@@ -84,7 +100,8 @@ function formHandler(event) {
 
     console.log(total)
 
-    // selectInputErr.setAttribute("class", "hidden")
+    formCleaner();
+
 };
 
 window.addEventListener('load', function () {
