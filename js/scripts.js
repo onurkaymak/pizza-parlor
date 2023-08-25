@@ -8,19 +8,19 @@ function Pizza(toppings, size) {
 
 Pizza.prototype.calculateCost = function () {
     switch (this.size) {
-        case ("small"):
+        case (1):
             console.log("Small Pizza!");
             this.cost += 9;
             break;
-        case ("medium"):
+        case (2):
             console.log("Medium Pizza!");
             this.cost += 12;
             break;
-        case ("large"):
+        case (3):
             console.log("Large Pizza!");
             this.cost += 15;
             break;
-        case ("xl"):
+        case (4):
             console.log("XL Pizza!");
             this.cost += 18;
             break;
@@ -47,17 +47,11 @@ Pizza.prototype.calculateCost = function () {
                 console.log("No toppings!");
         }
     }
-
+    return this;
 }
 
-// const myPizza = new Pizza(["salami", "mushroom"], "small");
-
-// myPizza.calculateCost();
-
-// console.log(myPizza);
 
 //UI Logic
-
 
 function formHandler(event) {
     event.preventDefault();
@@ -65,19 +59,32 @@ function formHandler(event) {
     let selectInputErr = document.getElementById('form-select-p');
     let sizeInput = document.getElementById('select-size').selectedIndex;
 
-    let input1 = document.getElementsByName('topping');
-    console.log(input1);
+    let checkboxes = document.getElementsByName('topping');
+
+    let selectedSize = 0;
+    let selectedToppings = [];
 
     if (sizeInput === 0) {
         console.log('nooo')
-        selectInputErr.removeAttribute("class");
+        return selectInputErr.removeAttribute("class");
     }
     else {
-
+        selectedSize = sizeInput;
     }
+
+    checkboxes.forEach(function (checkbox) {
+        if (checkbox.checked) {
+            selectedToppings.push(checkbox.value);
+        }
+    });
+
+    const myPizza = new Pizza(selectedToppings, selectedSize);
+    const total = myPizza.calculateCost();
+
+
+    console.log(total)
+
     // selectInputErr.setAttribute("class", "hidden")
-
-
 };
 
 window.addEventListener('load', function () {
