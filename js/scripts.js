@@ -52,7 +52,7 @@ function formCleaner() {
     const selectInputErr = document.getElementById('form-select-p');
     const checkboxes = document.getElementsByName('topping');
 
-    selectInputErr.setAttribute("class", "hidden");
+    selectInputErr.setAttribute("class", "error-p");
 
     checkboxes.forEach(function (checkbox) {
         checkbox.checked = false;
@@ -66,8 +66,8 @@ function formHandler(event) {
 
     let selectInputErr = document.getElementById('form-select-p');
     let sizeInput = document.getElementById('select-size').selectedIndex;
-
     let checkboxes = document.getElementsByName('topping');
+    let priceTag = document.getElementById('result-span');
 
     let selectedSize = 0;
     let selectedToppings = [];
@@ -88,8 +88,8 @@ function formHandler(event) {
     const myPizza = new Pizza(selectedToppings, selectedSize);
     const total = myPizza.calculateCost();
 
-
-    console.log(total)
+    // priceTag.innerText = `${total.cost}`
+    console.log(total.cost)
 
     formCleaner();
 

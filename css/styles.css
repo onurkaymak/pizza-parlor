@@ -27,10 +27,9 @@ body {
 h1 {
   width: 100%;
   text-align: center;
-  border-radius: 4rem;
   padding: 1rem;
   font-family: 'Tilt Prism', serif;
-  font-size: 8rem;
+  font-size: 5rem;
   background-color: rgb(106, 245, 199);
 }
 
@@ -103,6 +102,32 @@ label {
   transition: all 0.3s;
 }
 
-.hidden {
+.error-p {
   opacity: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.container-result {
+  font-size: 3.5rem;
+  font-family: 'Roboto Condensed', serif;
+  padding: 0.5rem 2.5rem;
+  margin: 0;
+  background-color: rgb(106, 245, 199);
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-span {
+  text-decoration: underline;
+  text-decoration-thickness: 0.3rem;
+}
+
+.result-dollar {
+  font-family: serif;
+  font-weight: 500;
 }

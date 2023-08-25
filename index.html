@@ -40,7 +40,7 @@
             <option value="4">Extra Large</option>
           </select>
 
-          <p class="hidden" id="form-select-p">
+          <p class="error-p" id="form-select-p">
             Please Select a size to order your pizza.
           </p>
         </div>
@@ -81,17 +81,15 @@
             Chorizo
           </label>
         </div>
-
         <button type="submit" class="btn-order">Checkout</button>
       </form>
     </div>
 
-    <div class="container-result">RESULT</div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"
-    ></script>
+    <div class="container-result">
+      <p>
+        Your total is: <span class="result-dollar">$</span
+        ><span class="result-span"></span>
+      </p>
+    </div>
   </body>
 </html>
