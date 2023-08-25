@@ -24,7 +24,6 @@ Pizza.prototype.calculateCost = function () {
     }
 
     if (this.toppings.length >= 4) {
-        console.log("Unlimited toppings!");
         this.cost += 11;
     } else {
         switch (this.toppings.length) {
@@ -37,8 +36,6 @@ Pizza.prototype.calculateCost = function () {
             case (3):
                 this.cost += 7;
                 break;
-            default:
-                console.log("No toppings!");
         }
     }
     return this;
@@ -46,6 +43,13 @@ Pizza.prototype.calculateCost = function () {
 
 
 //UI Logic
+
+function transactionEffect() {
+    let resultContainer = document.getElementById('container-result');
+
+    resultContainer.removeAttribute("class", "hidden");
+    resultContainer.setAttribute("class", "container-result");
+};
 
 function formCleaner() {
     let sizeInput = document.getElementById('select-size');
@@ -67,7 +71,9 @@ function formHandler(event) {
     let selectInputErr = document.getElementById('form-select-p');
     let sizeInput = document.getElementById('select-size').selectedIndex;
     let checkboxes = document.getElementsByName('topping');
-    let priceTag = document.getElementById('result-span');
+    let priceTag = document.getElementsByClassName('result-span');
+    let loadingSpinner = document.getElementById('loading-spinner');
+
 
     let selectedSize = 0;
     let selectedToppings = [];
@@ -88,10 +94,17 @@ function formHandler(event) {
     const myPizza = new Pizza(selectedToppings, selectedSize);
     const total = myPizza.calculateCost();
 
-    // priceTag.innerText = `${total.cost}`
-    console.log(total.cost)
+    let price = `${total.cost}`
+    priceTag[0].innerText = price;
 
-    formCleaner();
+    console.log(loadingSpinner)
+
+    setTimeout(function () {
+        loadingSpinner.removeAttribute("class", "hidden");
+    }, 5000)
+    // setTimeout(transactionEffect, 500);
+
+    // formCleaner();
 
 };
 

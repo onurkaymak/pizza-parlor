@@ -106,10 +106,6 @@ label {
   opacity: 0;
 }
 
-.hidden {
-  display: none;
-}
-
 .container-result {
   font-size: 3.5rem;
   font-family: 'Roboto Condensed', serif;
@@ -130,4 +126,41 @@ label {
 .result-dollar {
   font-family: serif;
   font-weight: 500;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgb(106, 245, 199);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: black transparent;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
 }
