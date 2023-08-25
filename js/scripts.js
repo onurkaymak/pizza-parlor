@@ -9,15 +9,12 @@ function Pizza(toppings, size) {
 Pizza.prototype.calculateCost = function () {
     switch (this.size) {
         case (1):
-            console.log("Small Pizza!");
             this.cost += 9;
             break;
         case (2):
-            console.log("Medium Pizza!");
             this.cost += 12;
             break;
         case (3):
-            console.log("Large Pizza!");
             this.cost += 15;
             break;
         case (4):
@@ -32,15 +29,12 @@ Pizza.prototype.calculateCost = function () {
     } else {
         switch (this.toppings.length) {
             case (1):
-                console.log("One topping!");
                 this.cost += 3;
                 break;
             case (2):
-                console.log("Two topping!");
                 this.cost += 5;
                 break;
             case (3):
-                console.log("Three topping!");
                 this.cost += 7;
                 break;
             default:
@@ -54,19 +48,17 @@ Pizza.prototype.calculateCost = function () {
 //UI Logic
 
 function formCleaner() {
-    let sizeInput = document.getElementById('select-size').selectedIndex;
+    let sizeInput = document.getElementById('select-size');
     const selectInputErr = document.getElementById('form-select-p');
     const checkboxes = document.getElementsByName('topping');
 
     selectInputErr.setAttribute("class", "hidden");
 
-    console.log(sizeInput)
-
     checkboxes.forEach(function (checkbox) {
         checkbox.checked = false;
     });
 
-    sizeInput = 0;
+    sizeInput.value = "0";
 }
 
 function formHandler(event) {
@@ -81,7 +73,6 @@ function formHandler(event) {
     let selectedToppings = [];
 
     if (sizeInput === 0) {
-        console.log('nooo')
         return selectInputErr.removeAttribute("class");
     }
     else {
