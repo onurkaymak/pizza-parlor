@@ -18,7 +18,6 @@ Pizza.prototype.calculateCost = function () {
             this.cost += 15;
             break;
         case (4):
-            console.log("XL Pizza!");
             this.cost += 18;
             break;
     }
@@ -45,10 +44,14 @@ Pizza.prototype.calculateCost = function () {
 //UI Logic
 
 function transactionEffect() {
-    let resultContainer = document.getElementById('container-result');
+    const resultContainer = document.getElementById('container-result');
+    let loadingSpinner = document.getElementById('loading-spinner');
 
     resultContainer.removeAttribute("class", "hidden");
     resultContainer.setAttribute("class", "container-result");
+
+
+    loadingSpinner.classList.add("class", "hidden");
 };
 
 function formCleaner() {
@@ -73,6 +76,7 @@ function formHandler(event) {
     let checkboxes = document.getElementsByName('topping');
     let priceTag = document.getElementsByClassName('result-span');
     let loadingSpinner = document.getElementById('loading-spinner');
+    const resultContainer = document.getElementById('container-result');
 
 
     let selectedSize = 0;
@@ -97,19 +101,16 @@ function formHandler(event) {
     let price = `${total.cost}`
     priceTag[0].innerText = price;
 
-    console.log(loadingSpinner)
+    resultContainer.classList.add("class", "hidden");
+    loadingSpinner.classList.remove("class", "hidden");
+    setTimeout(transactionEffect, 500);
 
-    setTimeout(function () {
-        loadingSpinner.removeAttribute("class", "hidden");
-    }, 5000)
-    // setTimeout(transactionEffect, 500);
 
-    // formCleaner();
+    formCleaner();
 
 };
 
 window.addEventListener('load', function () {
     const form = document.getElementById('form');
-
     form.addEventListener('submit', formHandler);
 });
