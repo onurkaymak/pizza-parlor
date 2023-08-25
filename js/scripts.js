@@ -62,11 +62,22 @@ Pizza.prototype.calculateCost = function () {
 function formHandler(event) {
     event.preventDefault();
 
-    const size = document.getElementById('select-size')
-    const test = size.options[size.selectedIndex];
+    let selectInputErr = document.getElementById('form-select-p');
+    let sizeInput = document.getElementById('select-size').selectedIndex;
 
-    console.log(size)
-    // console.log(test)
+    let input1 = document.getElementsByName('topping');
+    console.log(input1);
+
+    if (sizeInput === 0) {
+        console.log('nooo')
+        selectInputErr.removeAttribute("class");
+    }
+    else {
+
+    }
+    // selectInputErr.setAttribute("class", "hidden")
+
+
 };
 
 window.addEventListener('load', function () {
