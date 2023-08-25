@@ -7,20 +7,28 @@ function Pizza(toppings, size) {
 };
 
 Pizza.prototype.calculateCost = function () {
-    if (this.toppings.length > 0) {
-        console.log('there are toppings');
+    switch (this.size) {
+        case ("small"):
+            console.log("Small Pizza!");
+            this.cost += 12;
+            break;
+        case ("medium"):
+            console.log("Medium Pizza!");
+            this.cost += 16;
+            break;
+        case ("large"):
+            console.log("Large Pizza!");
+            this.cost += 20;
+            break;
+        case ("xl"):
+            console.log("XL Pizza!");
+            this.cost += 24;
+            break;
     }
-    else {
-        console.log('there is no toppings');
-    }
-    if (this.size === "medium") {
-        this.cost += 1.50;
-    }
+
 }
 
-const myPizza = new Pizza(["salami", "mushroom"], "medium");
-
-console.log(myPizza);
+const myPizza = new Pizza(["salami", "mushroom", "jalapeno"], "medium");
 
 myPizza.calculateCost();
 

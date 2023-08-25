@@ -8,9 +8,9 @@ Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium", c
 
 Describe: calculateCost()
 
-Test #1: "It should calculate a price for the pizza depends on selected toppings and size"
+Test #1: "It should calculate a price for the size of the pizza depends on selected size"
 Code:
 const myPizza = new Pizza(["salami", "mushroom"], "medium");
 myPizza.calculateCost();
-Expected Output: Pizza { toppings: ["salami", "mushroom"], size: "medium", cost: 1.5 }
+Expected Output: Pizza { toppings: ["salami", "mushroom"], size: "medium", cost: 16 }
 ```
