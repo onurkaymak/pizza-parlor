@@ -4,10 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
+
     <script src="js/scripts.js"></script>
     <title>Pizza Parlor</title>
   </head>
   <body>
-    <h1>Welcome to Pizza Parlor</h1>
+    <div class="container-main">
+      <h1>Welcome to Pizza Parlor</h1>
+      <h2>Please Select your pizza from the menu below:</h2>
+
+      <form action="" class="form">
+        <div class="container-size">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Select a size for your pizza</option>
+            <option value="1">Small</option>
+            <option value="2">Medium</option>
+            <option value="3">Large</option>
+            <option value="4">Extra Large</option>
+          </select>
+        </div>
+
+        <div class="container-toppings">
+          <label>
+            <input type="checkbox" name="topping" value="No toppings" />
+            No Toppings
+          </label>
+
+          <label>
+            <input type="checkbox" name="topping" value="Onion" />
+            Onion
+          </label>
+
+          <label>
+            <input type="checkbox" name="topping" value="Mushroom" />
+            Mushroom
+          </label>
+
+          <label>
+            <input type="checkbox" name="topping" value="Jalapeno" />
+            Jalapeno
+          </label>
+
+          <label>
+            <input type="checkbox" name="topping" value="Bell Pepper" />
+            Bell Pepper
+          </label>
+
+          <label>
+            <input type="checkbox" name="topping" value="Salami" />
+            Salami
+          </label>
+
+          <label>
+            <input type="checkbox" name="topping" value="Pepperoni" />
+            Pepperoni
+          </label>
+
+          <label>
+            <input type="checkbox" name="topping" value="Chorizo" />
+            Chorizo
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -27,7 +27,7 @@ Pizza.prototype.calculateCost = function () {
     }
 
     if (this.toppings.length >= 4) {
-        console.log("Unlimited topping!");
+        console.log("Unlimited toppings!");
         this.cost += 11;
     } else {
         switch (this.toppings.length) {
